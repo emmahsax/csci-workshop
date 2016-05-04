@@ -18,11 +18,13 @@ public class HighestStockPrice {
 
     int minPrice = stocks[0];
     int maxProfit = stocks[1] - stocks[0];
+    int currentPrice;
+    int potentialProfit;
 
     for (int i = 1; i < stocks.length; i++) {
-      int currentPrice = stocks[i];
-      int potentialPrice = currentPrice - minPrice;
-      maxProfit = Math.max(maxProfit, potentialPrice);
+      currentPrice = stocks[i];
+      potentialProfit = currentPrice - minPrice;
+      maxProfit = Math.max(maxProfit, potentialProfit);
       minPrice = Math.min(minPrice, currentPrice);
     }
 
