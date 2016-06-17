@@ -1,4 +1,4 @@
-# playing_with_ruby [![Code Climate](https://codeclimate.com/github/emmasax1/playing_with_ruby/badges/gpa.svg)](https://codeclimate.com/github/emmasax1/playing_with_ruby)
+# playing_with_ruby
 
 This is a repository that I'm going to use to play a little bit more with Ruby and trying to understand the basics of it a little more.
 
