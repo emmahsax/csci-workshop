@@ -1,1 +1,1 @@
-# OpenSourceSociety-ComputerScience
+# Learning Computer Science
