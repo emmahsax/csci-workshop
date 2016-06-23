@@ -23,7 +23,7 @@ class BinaryTreeNode
   end
 end
 
-## Gotchas: this is solvable in O(n) time and sapce
+## Gotchas: this is solvable in O(n) time and space
 
 def binary_tree_is_balanced?(tree_root)
   depths = []
