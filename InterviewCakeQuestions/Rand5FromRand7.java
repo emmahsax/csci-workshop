@@ -1,6 +1,6 @@
 /**
- * Given a function rand(7) that generates an integer from 1 to 7 with equal probability, write
- * a function rand(5) that generates an integer from 1 to 5 with equal  probability.
+ * Given a function rand7() that generates an integer from 1 to 7 with equal probability, write
+ * a function rand5() that generates an integer from 1 to 5 with equal  probability.
  */
 
 // This works because we make no gurantees about run-time or about what the probability
