@@ -1,0 +1,13 @@
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLD_LIBRARY_PATH
+export GITAWAREPROMPT=~/.BASH/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+export PATH=/usr/local/bin:/usr/local/mysql/bin:$PATH
+
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+
+# emmasax ~/personal/current_dir (git-branch)$
+export PS1="\[$txtpur\]\u \[$txtylw\]\w \[$txtgrn\]\$git_branch\[$txtrst\]\$ "
+source ~/.bashrc
+
+# Added by ./setup
+PATH=.bundle/bin:$PATH
