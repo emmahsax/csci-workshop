@@ -1,0 +1,52 @@
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+alias dkup='docker-compose up -d && docker attach $(docker-compose ps | tail -n1 | cut -d" " -f1)'
+alias dk='docker'
+alias dkc='docker-compose'
+
+alias cdup='cd ../'
+alias subl=' subl .'
+
+alias g-chp='git checkout -'
+alias g-chm='git checkout master'
+alias g-ch='git checkout'
+alias g-stat='git status'
+alias g-diff='git diff'
+alias g-cam='git commit -am'
+alias g-cav='git commit -av'
+alias g-cavp='git commit -av && git push'
+alias g-add='git add -A'
+alias g-push='git push'
+alias g-pull='git pull'
+alias g-stash='git stash'
+
+alias op-nb='op new-branch'
+alias op-pr='op pull-request'
+alias op-su='op stage-up'
+alias op-ap='op accept-pull'
+alias op-tg='op tag-release'
+
+alias gd='gordy deploy -u'
+alias gd-s='gordy deploy -u -e staging'
+alias gd-sd='gordy deploy -du -e staging'
+alias gd-p='gordy deploy -u -e production'
+alias gd-pd='gordy deploy -du -e production'
+
+alias soyuz-dep='soyuz deploy'
+
+alias ops-ms='opsicle monitor staging'
+alias ops-mp='opsicle monitor production'
+alias ops-ss-mfa='opsicle --mfa ssh staging'
+alias ops-sp-mfa='opsicle --mfa ssh production'
+alias ops-ss='opsicle ssh staging'
+alias ops-sp='opsicle ssh production'
+alias ops-cis='opsicle clone-instance staging'
+alias ops-cip='opsicle clone-instance production'
+
+export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future
+export NVM_DIR="/Users/emmasax/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# added by travis gem
+[ -f /Users/emmasax/.travis/travis.sh ] && source /Users/emmasax/.travis/travis.sh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
