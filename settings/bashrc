@@ -36,12 +36,18 @@ alias soyuz-dep='soyuz deploy'
 
 alias ops-ms='opsicle monitor staging'
 alias ops-mp='opsicle monitor production'
-alias ops-ss-mfa='opsicle --mfa ssh staging'
-alias ops-sp-mfa='opsicle --mfa ssh production'
 alias ops-ss='opsicle ssh staging'
 alias ops-sp='opsicle ssh production'
 alias ops-cis='opsicle clone-instance staging'
 alias ops-cip='opsicle clone-instance production'
+alias ops-sis='opsicle stop-instance staging'
+alias ops-sip='opsicle stop-instance production'
+alias ops-dis='opsicle delete-instance staging'
+alias ops-dip='opsicle delete-instance production'
+alias ops-meips='opsicle move-eip staging'
+alias ops-meipp='opsicle move-eip production'
+alias ops-ads='opsicle add-tags staging'
+alias ops-adp='opsicle add-tags production'
 
 export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future
 export NVM_DIR="/Users/emmasax/.nvm"
