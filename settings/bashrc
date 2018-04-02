@@ -1,11 +1,11 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 alias dkup='docker-compose up -d && docker attach $(docker-compose ps | tail -n1 | cut -d" " -f1)'
 alias dk='docker'
 alias dkc='docker-compose'
 
 alias cdup='cd ../'
-alias subl=' subl .'
+alias subl='subl .'
+alias atom-o='open -a "Atom" .'
+alias atom='atom .'
 
 alias g-chp='git checkout -'
 alias g-chm='git checkout master'
@@ -36,6 +36,8 @@ alias soyuz-dep='soyuz deploy'
 
 alias ops-ms='opsicle monitor staging'
 alias ops-mp='opsicle monitor production'
+alias ops-is='opsicle instances staging'
+alias ops-ip='opsicle instances production'
 alias ops-ss='opsicle ssh staging'
 alias ops-sp='opsicle ssh production'
 alias ops-cis='opsicle clone-instance staging'
@@ -56,3 +58,6 @@ export NVM_DIR="/Users/emmasax/.nvm"
 # added by travis gem
 [ -f /Users/emmasax/.travis/travis.sh ] && source /Users/emmasax/.travis/travis.sh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
