@@ -33,7 +33,7 @@ alias gd-p='gordy deploy -u -e production'
 alias gd-pd='gordy deploy -du -e production'
 
 alias soyuz-dep='soyuz deploy'
-alias add-ssh-keys='ls ~/.ssh/*.pub | sed 's/.pub//' | xargs ssh-add -K'
+alias add-ssh='ls ~/.ssh/*.pub | sed 's/.pub//' | xargs ssh-add -K'
 
 alias ops-ms='opsicle monitor staging'
 alias ops-mp='opsicle monitor production'
