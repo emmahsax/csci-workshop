@@ -27,6 +27,7 @@ alias op-ap='op accept-pull'
 alias op-tg='op tag-release'
 
 alias gd='gordy deploy -u'
+alias gd-d='gordy deploy -du'
 alias gd-s='gordy deploy -u -e staging'
 alias gd-sd='gordy deploy -du -e staging'
 alias gd-p='gordy deploy -u -e production'
