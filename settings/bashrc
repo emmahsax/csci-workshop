@@ -54,6 +54,7 @@ alias opsads='opsicle add-tags staging'
 alias opsadp='opsicle add-tags production'
 
 alias cleangit='git fetch -p && for branch in `git branch -vv | grep ": gone]" | awk '"'"'{print $1}'"'"'`; do git branch -D $branch; done'
+
 export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future
 export NVM_DIR="/Users/emmasax/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
