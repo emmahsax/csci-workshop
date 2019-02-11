@@ -2,12 +2,17 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLD_LIBRARY_PATH
 export GITAWAREPROMPT=~/.BASH/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 export PATH=/usr/local/bin:/usr/local/mysql/bin:$PATH
+export LC_CTYPE="utf-8"
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
-# emmasax ~/personal/current_dir (git-branch)$
-export PS1="\[$txtpur\]\u \[$txtylw\]\w \[$txtgrn\]\$git_branch\[$txtrst\]\$ "
-source ~/.bashrc
-
 # Added by ./setup
 PATH=.bundle/bin:$PATH
+
+# Added by ./setup
+PATH=/Users/emmasax/.gem/ruby/2.3.0/bin:$PATH
+
+# Mon Jan 01 13:26:31 emmasax ~/personal/current_dir (git-branch)
+# $
+export PS1="\[$bldblu\]\d \t \[$bldpur\]\u \[$bldylw\]\w \[$bldgrn\]\$git_branch\n\[$bldwht\]\$ \[$txtrst\]"
+source ~/.bashrc
