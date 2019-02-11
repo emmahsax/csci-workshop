@@ -9,9 +9,6 @@ export LC_CTYPE="utf-8"
 # Added by ./setup
 PATH=.bundle/bin:$PATH
 
-# Added by ./setup
-PATH=/Users/emmasax/.gem/ruby/2.3.0/bin:$PATH
-
 # Mon Jan 01 13:26:31 emmasax ~/personal/current_dir (git-branch)
 # $
 export PS1="\[$bldblu\]\d \t \[$bldpur\]\u \[$bldylw\]\w \[$bldgrn\]\$git_branch\n\[$bldwht\]\$ \[$txtrst\]"
