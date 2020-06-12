@@ -3,5 +3,5 @@ dist: xenial
 os: linux
 cache: bundler
 branches:
-  only: [ master ]
+  only: [ main ]
 script: true
