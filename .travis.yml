@@ -1,7 +1,0 @@
-language: ruby
-dist: xenial
-os: linux
-cache: bundler
-branches:
-  only: [ main ]
-script: true
