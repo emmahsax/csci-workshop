@@ -20,5 +20,5 @@ jobs:
     - name: Switch to Current Branch
       run: git checkout ${{ env.BRANCH }}
 
-    - name: 'Script: true'
+    - name: 'script: true'
       run: echo true
