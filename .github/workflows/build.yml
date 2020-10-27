@@ -15,10 +15,15 @@ jobs:
         fetch-depth: 0
 
     - name: Define Run Variables
-      run: echo "BRANCH=$(echo ${{ github.head_ref }} | sed -E 's|refs/[a-zA-Z]+/||')" >> $GITHUB_ENV
+      run: |
+        if [[ ${{ github.ref }} == 'refs/heads'* ]]; then # this is a branch, not a pull request
+          echo "branch=$(echo ${{ github.ref }} | sed -E 's|refs/[a-zA-Z]+/||')" >> $GITHUB_ENV
+        else
+          echo "branch=$(echo ${{ github.head_ref }} | sed -E 's|refs/[a-zA-Z]+/||')" >> $GITHUB_ENV
+        fi
 
     - name: Switch to Current Branch
-      run: git checkout ${{ env.BRANCH }}
+      run: git checkout ${{ env.branch }}
 
     - name: 'script: true'
       run: echo true
