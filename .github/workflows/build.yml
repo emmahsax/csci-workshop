@@ -14,7 +14,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Define Run Variables
+    - name: Define Environment Variables
       run: |
         if [[ ${{ github.ref }} == 'refs/heads'* ]]; then # this is a branch, not a pull request
           echo "branch=$(echo ${{ github.ref }} | sed -E 's|refs/[a-zA-Z]+/||')" >> $GITHUB_ENV
