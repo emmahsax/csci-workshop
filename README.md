@@ -6,6 +6,14 @@ Some of these projects use Ruby, some use Java, and at least one even uses Javas
 
 ---
 
+### Contributing
+
+To submit a feature request, bug ticket, etc, please submit an official [GitHub Issue](https://github.com/emmahsax/csci-workshop/issues/new).
+
+### Security Policy
+
+To report any security vulnerabilities, please view this repository's [Security Policy](https://github.com/emmahsax/csci-workshop/security/policy).
+
 ### Licensing
 
 For information on licensing, please see [LICENSE.md](https://github.com/emmahsax/csci-workshop/blob/main/LICENSE.md).
