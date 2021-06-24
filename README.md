@@ -8,7 +8,7 @@ Some of these projects use Ruby, some use Java, and at least one even uses Javas
 
 ### Licensing
 
-For information on licensing, please see [LICENSE](https://github.com/emmahsax/csci-workshop/blob/main/LICENSE.md).
+For information on licensing, please see [LICENSE.md](https://github.com/emmahsax/csci-workshop/blob/main/LICENSE.md).
 
 ### Code of Conduct
 
