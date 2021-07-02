@@ -8,7 +8,9 @@ Some of these projects use Ruby, some use Java, and at least one even uses Javas
 
 ### Contributing
 
-To submit a feature request, bug ticket, etc, please submit an official [GitHub Issue](https://github.com/emmahsax/csci-workshop/issues/new).
+To submit a feature request, bug ticket, etc, please submit an official [GitHub issue](https://github.com/emmahsax/csci-workshop/issues/new). To copy or make changes, please [fork this repository](https://github.com/emmahsax/csci-workshop/fork). When/if you'd like to contribute back to this upstream, please create a pull request on this repository.
+
+Please follow included Issue Template(s) and Pull Request Template(s) when creating issues or pull requests.
 
 ### Security Policy
 
