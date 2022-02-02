@@ -36,11 +36,10 @@ while read line; do
 
     if [[ $masked_bool == 1 ]]; then
       echo "$temp_line [M]"
+      masked_bool=0
     else
       echo "$temp_line"
     fi
-
-    masked_bool=0
   fi
 done < web-logs-raw
 
