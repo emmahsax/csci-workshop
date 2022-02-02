@@ -1,3 +1,5 @@
+### From October 2016
+
 # A zero-indexed array A consisting of N integers is given.
 # An equilibrium index of this array is any integer P such that
 # 0 <= P < 0 and the sum of elements of lower indices is equal

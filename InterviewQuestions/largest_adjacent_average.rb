@@ -1,3 +1,5 @@
+### From October 2016
+
 # Write a method that takes a number X (such as 52384) and chooses two adjacent
 # digits and replaces them with a single digit that equals to the rounded-up
 # average of the two digits. It should return the largest of these digits.
