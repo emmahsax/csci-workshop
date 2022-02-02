@@ -1,3 +1,5 @@
+### From February 2022
+
 # Write a program that gets the raw output logs that exist at the URL
 # https://coderbyte.com/api/challenges/logs/web-logs-raw. The logs there
 # are a sample of real web server logs. Each line begins with a date,
@@ -37,9 +39,9 @@ while read line; do
     else
       echo "$temp_line"
     fi
-  fi
 
-  masked_bool=0
+    masked_bool=0
+  fi
 done < web-logs-raw
 
 rm web-logs-raw
