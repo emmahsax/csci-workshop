@@ -1,5 +1,5 @@
 .classpath
-bin/*.class'
+.metadata
 .project
 .settings/*
-.metadata
+bin/*.class'
