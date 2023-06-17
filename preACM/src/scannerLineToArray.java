@@ -2,17 +2,16 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class scannerLineToArray {
-
     public static void main(String[] args) {
-      Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-      String sentence = input.nextLine();
-      String[] wordArray = sentence.split(" ");
+        String sentence = input.nextLine();
+        String[] wordArray = sentence.split(" ");
 
-      System.out.println(Arrays.toString(wordArray));
-      input.close();
+        System.out.println(Arrays.toString(wordArray));
+        input.close();
     }
-  }
+}
 
 /** HOW THIS WORKS:
  * This will turn the string into an array.

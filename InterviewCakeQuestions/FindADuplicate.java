@@ -14,36 +14,36 @@
 // of the loop, then that position where position = index + 1 is the first repeat.
 
 public static int findADuplicate (int[] intArray) {
-  // Get somewhere inside the loop
-  int n = intArray.length - 1;
-  int position = n + 1;
+    // Get somewhere inside the loop
+    int n = intArray.length - 1;
+    int position = n + 1;
 
-  for (int x = 0; x < n; n++) {
-    position = intArray[position - 1]; // last number in array
-  }
+    for (int x = 0; x < n; n++) {
+        position = intArray[position - 1]; // last number in array
+    }
 
-  // find the entire length of the loop
-  int remember = position;
-  int moving = intArray[position - 1]; // a step ahead
-  int count = 1;
+    // find the entire length of the loop
+    int remember = position;
+    int moving = intArray[position - 1]; // a step ahead
+    int count = 1;
 
-  while (moving != remember) {
-    moving = intArray[moving - 1]; // keep stepping ahead
-    count++;
-  }
+    while (moving != remember) {
+        moving = intArray[moving - 1]; // keep stepping ahead
+        count++;
+    }
 
-  // find the first node in the loop
-  int start = n + 1;
-  int ahead = n + 1;
+    // find the first node in the loop
+    int start = n + 1;
+    int ahead = n + 1;
 
-  for (int x = 0; x < count; x++) {
-    ahead = intArray[ahead - 1];
-  }
+    for (int x = 0; x < count; x++) {
+        ahead = intArray[ahead - 1];
+    }
 
-  while (start != ahead) {
-    start = intArray[start - 1];
-    ahead = intArray[ahead - 1];
-  }
+    while (start != ahead) {
+        start = intArray[start - 1];
+        ahead = intArray[ahead - 1];
+    }
 
-  return start;
+    return start;
 }

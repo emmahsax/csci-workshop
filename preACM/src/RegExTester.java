@@ -27,7 +27,6 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class RegExTester{
-
     public static void main(String[] args){
         // sample use of the functions
         doRegExMatch("cAkE", Pattern.CASE_INSENSITIVE, "This cake is so delicious and moist.");

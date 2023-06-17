@@ -8,26 +8,26 @@
 import java.util.Stack;
 
 public class MaxStack {
-  Stack<Integer> stack = new Stack<Integer>();
-  Stack<Integer> maxsStack = new Stack<Integer>();
+    Stack<Integer> stack = new Stack<Integer>();
+    Stack<Integer> maxsStack = new Stack<Integer>();
 
-  public int push(int element) {
-    stack.push(element);
-    if (maxsStack.empty() || element >= (int) maxsStack.peek()) {
-      maxsStack.push(element);
+    public int push(int element) {
+        stack.push(element);
+        if (maxsStack.empty() || element >= (int) maxsStack.peek()) {
+        maxsStack.push(element);
+        }
+        return element;
     }
-    return element;
-  }
 
-  public int pop() {
-    int element = (int) stack.pop();
-    if (element == (int) maxsStack.peek()) {
-      maxsStack.pop();
+    public int pop() {
+        int element = (int) stack.pop();
+        if (element == (int) maxsStack.peek()) {
+        maxsStack.pop();
+        }
+        return element
     }
-    return element
-  }
 
-  public int getMax() {
-    return (int) maxsStack.peek();
-  }
+    public int getMax() {
+        return (int) maxsStack.peek();
+    }
 }
