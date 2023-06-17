@@ -25,6 +25,5 @@ puts "I'm finished! Type 'cat #{ARGV[1]}' to see the copied file."
 file1.close
 file2.close
 
-
 ## This is a one line version of the same copying of one file to another
 #open(ARGV[1], 'w').write(open(ARGV[0]).read)

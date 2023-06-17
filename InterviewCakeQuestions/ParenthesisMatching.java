@@ -5,21 +5,21 @@
  */
 
 public class ParenthesisMatching {
-  public static int match(String sentence, int index) {
-    int parenCount = 0;
+    public static int match(String sentence, int index) {
+        int parenCount = 0;
 
-    for (int i = index + 1; i < sentence.length(); i++) {
-      if (sentence.charAt(i) == '(') {
-        parenCount++;
-      } else if (sentence.charAt(i) == ')') {
-        if (parenCount == 0) {
-          return i;
-        } else {
-          parenCount--;
+        for (int i = index + 1; i < sentence.length(); i++) {
+            if (sentence.charAt(i) == '(') {
+                parenCount++;
+            } else if (sentence.charAt(i) == ')') {
+                if (parenCount == 0) {
+                    return i;
+                } else {
+                    parenCount--;
+                }
+            }
         }
-      }
-    }
 
-    throw new IllegalArgumentException("No closing parenthesis");
-  }
+        throw new IllegalArgumentException("No closing parenthesis");
+    }
 }

@@ -16,9 +16,9 @@ puts "I also said: '#{y}'"
 hilarious = true
 
 if hilarious == false
-	hilarious1 = "false".capitalize
+  hilarious1 = "false".capitalize
 elsif hilarious == true
-	hilarious1 = "true".capitalize
+  hilarious1 = "true".capitalize
 end
 
 joke_evaluation = "Isn't that joke so funny?! #{hilarious1}"

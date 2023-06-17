@@ -3,15 +3,15 @@
 input_file = ARGV[0]
 
 def print_all (f)
-	puts f.read
+  puts f.read
 end
 
 def rewind (f)
-	f.seek(0)
+  f.seek(0)
 end
 
 def print_a_line(line_count, f)
-	puts "#{line_count}: #{f.gets.chomp}"
+  puts "#{line_count}: #{f.gets.chomp}"
 end
 
 # gets.chomp will read the file until it gets to a '\n', in which case the read head will
@@ -31,5 +31,5 @@ rewind(current_file)
 puts "Let's print three lines:"
 
 for i in 1..3 do
-	print_a_line(i, current_file)
+  print_a_line(i, current_file)
 end

@@ -3,29 +3,29 @@
  */
 
 public static class BinaryTreeNode {
-  public int value;
-  public BinaryTreeNode left;
-  public BinaryTreeNode right;
-  public int upperBound;
-  public int lowerBound;
+    public int value;
+    public BinaryTreeNode left;
+    public BinaryTreeNode right;
+    public int upperBound;
+    public int lowerBound;
 
-  public BinaryTreeNode(int value) {
-    this.value = value;
-  }
+    public BinaryTreeNode(int value) {
+        this.value = value;
+    }
 
-  public BinaryTreeNode insertLeft(int leftValue) {
-    this.left = new BinaryTreeNode(leftValue);
-    this.left.upperBound = this.value;
-    this.left.lowerBound = this.lowerBound;
-    return this.left;
-  }
+    public BinaryTreeNode insertLeft(int leftValue) {
+        this.left = new BinaryTreeNode(leftValue);
+        this.left.upperBound = this.value;
+        this.left.lowerBound = this.lowerBound;
+        return this.left;
+    }
 
-  public BinaryTreeNode insertRight(int rightValue) {
-    this.right = new BinaryTreeNode(rightValue);
-    this.right.lowerBound = this.value;
-    this.right.upperBound = this.upperBound;
-    return this.right;
-  }
+    public BinaryTreeNode insertRight(int rightValue) {
+        this.right = new BinaryTreeNode(rightValue);
+        this.right.lowerBound = this.value;
+        this.right.upperBound = this.upperBound;
+        return this.right;
+    }
 }
 
 /**
@@ -34,24 +34,24 @@ public static class BinaryTreeNode {
  */
 
 public boolean validBinaryTree(BinaryTreeNode headNode) {
-  Stack<BinaryTreeNode> nodeStack = new Stack<BinaryTreeNode>(); // stack of nodes that we're "counting" as we go
-  nodeStack.push(headNode);
+    Stack<BinaryTreeNode> nodeStack = new Stack<BinaryTreeNode>(); // stack of nodes that we're "counting" as we go
+    nodeStack.push(headNode);
 
-  while (!nodeStack.empty()) {
-    BinaryTreeNode node = nodeStack.pop;
+    while (!nodeStack.empty()) {
+        BinaryTreeNode node = nodeStack.pop;
 
-    if ((node.value < node.lowerBound) || (node.value > node.upperBound)) { // node doesn't fit within its set bounds
-      return false;
+        if ((node.value < node.lowerBound) || (node.value > node.upperBound)) { // node doesn't fit within its set bounds
+            return false;
+        }
+
+        if (node.left != null) {
+            nodeStack.push(node.left);
+        }
+
+        if (node.right != null) {
+            nodeStack.push(node.right);
+        }
     }
 
-    if (node.left != null) {
-      nodeStack.push(node.left);
-    }
-
-    if (node.right != null) {
-      nodeStack.push(node.right);
-    }
-  }
-
-  return true;
+    return true;
 }

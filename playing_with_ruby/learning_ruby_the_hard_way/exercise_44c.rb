@@ -18,7 +18,6 @@ class Child < Parent
     super()
     puts "CHILD, AFTER PARENT altered()"
   end
-
 end
 
 dad = Parent.new()

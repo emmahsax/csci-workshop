@@ -7,13 +7,13 @@
 // of each number should be. So with this solution, it does that the chance of never returning,
 // and the probability that the answer will be any given number is 1/7.
 public class Rand5FromRand7 {
-  public static int rand5() {
-    int ans = rand7();
+    public static int rand5() {
+        int ans = rand7();
 
-    while (ans > 5) {
-      ans = rand7();
+        while (ans > 5) {
+            ans = rand7();
+        }
+
+        return ans;
     }
-
-    return ans;
-  }
 }

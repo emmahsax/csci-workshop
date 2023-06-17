@@ -28,7 +28,6 @@ def solution(s)
   end
 
   return ans_array.max_by(&:length)
-
 end
 
 def image?(word)

@@ -88,10 +88,10 @@ def gold_room
 end
 
 def include_num (choice)
-	return choice.include?("0") || choice.include?("1") ||
-     	   choice.include?("2") || choice.include?("3") || 
-           choice.include?("4") || choice.include?("4") || 
-           choice.include?("6") || choice.include?("7") || 
+  return choice.include?("0") || choice.include?("1") ||
+          choice.include?("2") || choice.include?("3") ||
+           choice.include?("4") || choice.include?("4") ||
+           choice.include?("6") || choice.include?("7") ||
            choice.include?("8") || choice.include?("9")
 end
 

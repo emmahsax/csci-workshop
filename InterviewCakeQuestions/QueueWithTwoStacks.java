@@ -10,25 +10,25 @@
 import java.util.Stack;
 
 public class QueueWithTwoStacks {
-  Stack<Integer> inStack = new Stack<Integer>();
-  Stack<Integer> outStack = new Stack<Integer>();
+    Stack<Integer> inStack = new Stack<Integer>();
+    Stack<Integer> outStack = new Stack<Integer>();
 
-  public static void enqueue(int element) {
-    inStack.push(element);
-  }
-
-  public static int dequeue() {
-    if (outStack.empty()) {
-      transferInStackToOutStack();
+    public static void enqueue(int element) {
+        inStack.push(element);
     }
 
-    return outStack.pop();
-  }
+    public static int dequeue() {
+        if (outStack.empty()) {
+            transferInStackToOutStack();
+        }
 
-  public static void transferInStackToOutStack() {
-    while (!inStack.empty()) {
-      int element = inStack.pop();
-      outStack.push(element);
+        return outStack.pop();
     }
-  }
+
+    public static void transferInStackToOutStack() {
+        while (!inStack.empty()) {
+            int element = inStack.pop();
+            outStack.push(element);
+        }
+    }
 }

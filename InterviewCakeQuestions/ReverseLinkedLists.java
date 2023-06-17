@@ -8,27 +8,27 @@
  */
 
 public class ReverseLinkedLists {
-  public static Node reverseLinkedList(Node head) {
-    Node previousNode = null;
-    Node currentNode = head;
-    Node nextNode = null;
+    public static Node reverseLinkedList(Node head) {
+        Node previousNode = null;
+        Node currentNode = head;
+        Node nextNode = null;
 
-    while (currentNode != null) {
-      nextNode = currentNode.next;
-      currentNode.next = previousNode;
-      previousNode = currentNode;
-      currentNode = nextNode;
+        while (currentNode != null) {
+            nextNode = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+
+        return previousNode;
     }
 
-    return previousNode;
-  }
+    public static class Node {
+        public int value;
+        public Node next;
 
-  public static class Node {
-    public int value;
-    public Node next;
-
-    public Node(int value) {
-      this.value = value;
+        public Node(int value) {
+        this.value = value;
+        }
     }
-  } 
 }

@@ -1,4 +1,4 @@
-## This experiments with opening files when they're both typed in as arguments 
+## This experiments with opening files when they're both typed in as arguments
 ## or when they're writtin as a standard input
 ## We always close the files when we're done, just like with streams
 

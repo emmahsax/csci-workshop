@@ -2,26 +2,26 @@
 
 def my_while_loop (ending_num)
 
-	i = 0
-	numbers = []
+  i = 0
+  numbers = []
 
-	while i <= ending_num do
-		puts "Current number i is #{i}"
-		numbers.push(i)
-	
-		i += 1
-		puts "Numbers now: ", numbers
-		puts "Next number i is #{i}"
-		puts "\n"
-	end
+  while i <= ending_num do
+    puts "Current number i is #{i}"
+    numbers.push(i)
 
-	puts "The numbers: "
+    i += 1
+    puts "Numbers now: ", numbers
+    puts "Next number i is #{i}"
+    puts "\n"
+  end
 
-	numbers.each do |i|
-		puts i
-	end
-	
-	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  puts "The numbers: "
+
+  numbers.each do |i|
+    puts i
+  end
+
+  puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 end
 
 puts my_while_loop(2)
