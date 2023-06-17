@@ -11,13 +11,13 @@ Inside `app/views/tweets/show.html.erb`:
 ```html
 <!DOCTYPE html>
 <html>
-	<head><title>RailsForZombies</title></head>
-	<body>
-		<header>...</header>
-		<% tweet = Tweet.find(1) %>
-		<h1><%= tweet.status %></h1>
-		<p>Posted by <%= tweet.zombie.name %></p>
-	</body>
+  <head><title>RailsForZombies</title></head>
+  <body>
+    <header>...</header>
+    <% tweet = Tweet.find(1) %>
+    <h1><%= tweet.status %></h1>
+    <p>Posted by <%= tweet.zombie.name %></p>
+  </body>
 </html>
 ```
 
@@ -28,11 +28,11 @@ Now, if we wanted to use this basic header information again, it isn't very D.R.
 ```html
 <!DOCTYPE html>
 <html>
-	<head><title>RailsForZombies</title></head>
-	<body>
-		<header>...</header>
-		<%= yield %>
-	</body>
+  <head><title>RailsForZombies</title></head>
+  <body>
+    <header>...</header>
+    <%= yield %>
+  </body>
 </html>
 ```
 
@@ -74,8 +74,8 @@ As with tweets, shorter is better. Now we move the link up into the code:
 <% tweet = Tweet.find(1) %>
 <h1><%= tweet.status %></h1>
 <p>Posted by <%= link_to tweet.zombie.name
-					     tweet.zombie,
-					     confirm: "Are you sure?" %></p>
+               tweet.zombie,
+               confirm: "Are you sure?" %></p>
 ```
 
 Remember how the template for the entire application is in `app/views/layouts/application.html.erb`? But what about the `app/views/tweets/index.html.erb`? This is where we'll list all of the tweets.
@@ -83,15 +83,15 @@ Remember how the template for the entire application is in `app/views/layouts/ap
 ```html
 <h1>Listing tweets</h1>
 <table>
-	<tr>
-		<th>Status</th>
-		<th>Zombie</th>
-	</tr>
+  <tr>
+    <th>Status</th>
+    <th>Zombie</th>
+  </tr>
 <% Tweet.all.each do |tweet| %>
-	<tr>
-		<td><%= tweet.status %></td>
-		<td><%= tweet.zombie.name %></td>
-	</tr>
+  <tr>
+    <td><%= tweet.status %></td>
+    <td><%= tweet.zombie.name %></td>
+  </tr>
 <% end %>
 </table>
 ```
@@ -100,10 +100,10 @@ The loop is saying to go through all of the tweets, and then print the status an
 
 ```html
 <% Tweet.all.each do |tweet| %>
-	<tr>
-		<td><%= link_to tweet.status, tweet%></td>
-		<td><%= link_to tweet.zombie.name, tweet.zombie %></td>
-	</tr>
+  <tr>
+    <td><%= link_to tweet.status, tweet%></td>
+    <td><%= link_to tweet.zombie.name, tweet.zombie %></td>
+  </tr>
 <% end %>
 ```
 
@@ -112,13 +112,13 @@ What if we pull up the page and there aren't any tweets yet? We want it to actua
 ```html
 <% tweets = Tweet.all %>
 <% tweets.each do |tweet| %>
-	<tr>
-		<td><%= link_to tweet.status, tweet%></td>
-		<td><%= link_to tweet.zombie.name, tweet.zombie %></td>
-	</tr>
+  <tr>
+    <td><%= link_to tweet.status, tweet%></td>
+    <td><%= link_to tweet.zombie.name, tweet.zombie %></td>
+  </tr>
 <% end %>
 <% if tweets.size == 0 %>
-	<em>No Tweets found</em>
+  <em>No Tweets found</em>
 <% end %>
 ```
 
@@ -126,12 +126,12 @@ What if a zombie wants to edit or delete a tweet?
 
 ```html
 <% tweets.each do |tweet| %>
-	<tr>
-		<td><%= link_to tweet.status, tweet %></td>
-		<td><%= link_to tweet.zombie.name, tweet.zombie %></td>
-		<td><%= link_to "Edit", edit_tweet_path(tweet) %></td>
-		<td><%= link_to "Destroy", tweet, method: :delete %></td>
-	</tr>
+  <tr>
+    <td><%= link_to tweet.status, tweet %></td>
+    <td><%= link_to tweet.zombie.name, tweet.zombie %></td>
+    <td><%= link_to "Edit", edit_tweet_path(tweet) %></td>
+    <td><%= link_to "Destroy", tweet, method: :delete %></td>
+  </tr>
 <% end %>
 ```
 

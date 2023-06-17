@@ -26,7 +26,7 @@ this_year = gets.chomp
 year_born = 2015 - age
 
 if this_year == "no"
-	year_born = year_born - 1
+  year_born = year_born - 1
 end
 
 puts "#{name} was born in #{year_born}."

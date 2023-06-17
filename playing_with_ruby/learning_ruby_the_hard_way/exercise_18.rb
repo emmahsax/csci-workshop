@@ -2,7 +2,7 @@
 def print_two(*args) # takes in as many arguments as we want
   puts "arg1: #{args[0]}; arg2: #{args[1]}"
   if args.length >= 3
-  	puts "arg3: #{args[2]}"
+    puts "arg3: #{args[2]}"
   end
 end
 

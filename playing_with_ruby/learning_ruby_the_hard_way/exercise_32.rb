@@ -12,7 +12,7 @@ end
 
 # if we were to write the previous loop in the .each style, it would look like this:
 #the_count.each do |i|
-#	puts "This is count #{i}"
+#  puts "This is count #{i}"
 #end
 
 # same as above, but in a more Ruby style
@@ -27,7 +27,7 @@ end
 # but a different syntax (way to write it).
 #change.each {|i| puts "I got #{i}"}
 change.each do |i|
-	puts "I got #{i}"
+  puts "I got #{i}"
 end
 
 # we can also build lists, first start with an empty one
@@ -43,7 +43,7 @@ end
 # now we can print them out too
 #elements.each {|i| puts "Element was: #{i}"}
 elements.each do |i|
-	puts "Element was: #{i}"
+  puts "Element was: #{i}"
 end
 
 ## Personally, Emma prefers the way that's written out three lines with the 'do' command

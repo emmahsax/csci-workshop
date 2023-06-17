@@ -47,23 +47,23 @@ class Kattio extends PrintWriter {
     }
 
     public boolean hasMoreTokens() {
-    	return peekToken() != null;
+      return peekToken() != null;
     }
 
     public int getInt() {
-    	return Integer.parseInt(nextToken());
+      return Integer.parseInt(nextToken());
     }
 
     public double getDouble() {
-    	return Double.parseDouble(nextToken());
+      return Double.parseDouble(nextToken());
     }
 
     public long getLong() {
-    	return Long.parseLong(nextToken());
+      return Long.parseLong(nextToken());
     }
 
     public String getWord() {
-    	return nextToken();
+      return nextToken();
     }
 
     private BufferedReader r;
@@ -72,16 +72,16 @@ class Kattio extends PrintWriter {
     private String token;
 
     private String peekToken() {
-	if (token == null)
-	    try {
+  if (token == null)
+      try {
             while (st == null || !st.hasMoreTokens()) {
                 line = r.readLine();
                 if (line == null) return null;
                 st = new StringTokenizer(line);
             }
             token = st.nextToken();
-	    } catch (IOException e) { }
-    	return token;
+      } catch (IOException e) { }
+      return token;
     }
 
     private String nextToken() {

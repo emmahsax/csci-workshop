@@ -6,8 +6,8 @@
     (if (empty? c)
       result
       (if (= times 0)
-      	(recur (rest c) n result)
-      	(recur c (dec times) (conj result (first c)))))))
+        (recur (rest c) n result)
+        (recur c (dec times) (conj result (first c)))))))
 
 ;Interpose a Sequence
 (defn my-interpose [arbitrary collection]

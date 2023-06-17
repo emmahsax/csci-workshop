@@ -157,7 +157,7 @@ We can see what this would look like if we print it:
 ```ruby
 print poem
 => "My toast has flown from my hand
-	And my toast has gone to the moon.
+  And my toast has gone to the moon.
     But when I saw it on the television,
     Planting our flag on Halley's comet,
     More still did I want to eat it.
@@ -172,7 +172,7 @@ poem['toast'] = 'honeydew'
 
 print poem
 => "My honeydew has flown from my hand
-	And my toast has gone to the moon.
+  And my toast has gone to the moon.
     But when I saw it on the television,
     Planting our flag on Halley's comet,
     More still did I want to eat it.
@@ -251,10 +251,10 @@ books["The Mists of Avalon"] = :mediocre
 
 books
 => {"Gravity's Rainbow"=>:splendid,
-	"Fifty Shades of Grey"=>:abysmal,
-	"Harry Poter and the Deathly Hallows"=>:splendid,
-	"The Lion, the Witch, and the Wardrobe"=>:splendid,
-	"The Mists of Avalon"=>:mediocre
+  "Fifty Shades of Grey"=>:abysmal,
+  "Harry Poter and the Deathly Hallows"=>:splendid,
+  "The Lion, the Witch, and the Wardrobe"=>:splendid,
+  "The Mists of Avalon"=>:mediocre
    }
 
 books.length
@@ -360,7 +360,7 @@ First, we have to open the file. The `"a"` means that whatever we add will appen
 
 ```ruby
 File.open("/Home/comics.txt", "a") do |f|
-	f << "Cat and Girl: http://catandgirl.com/"
+  f << "Cat and Girl: http://catandgirl.com/"
 end
 => #<File:/Home/comics.txt (closed)>
 ```
@@ -390,17 +390,17 @@ Let's define a method (this is new!) that will help us.
 
 ```ruby
 def load_comics (path)
-	comics = {}
-	File.foreach(path) do |line|
-		name, url = line.split(": ")
-		comics[name] = url.strip
-	end
-	comics
+  comics = {}
+  File.foreach(path) do |line|
+    name, url = line.split(": ")
+    comics[name] = url.strip
+  end
+  comics
 end
 => {"Achewood"=>"http://achewoods.com/",
-	"Dinosaur Comics"=>"http://qwantz.com/",
-	"Perry Bible Fellowship"=>"http://cheston.com/pbf/archive.html",
-	"Get Your War On"=>"http://mnftiu.cc/"
+  "Dinosaur Comics"=>"http://qwantz.com/",
+  "Perry Bible Fellowship"=>"http://cheston.com/pbf/archive.html",
+  "Get Your War On"=>"http://mnftiu.cc/"
    }
 ```
 

@@ -6,7 +6,7 @@ In order for everything to essentially be evaluated correctly, we need to declar
 
 ```ruby
 ZombieTwitter::Application.routes.draw do
-	resources :tweets
+  resources :tweets
 end
 ```
 
@@ -16,9 +16,9 @@ When it comes to custom routes, we need to add stuff:
 
 ```ruby
 ZombieTwitter::Application.routes.draw do
-	resources :tweets
-	get '/new_tweet' => 'tweets#new'
-	get '/all' => 'tweets#index'
+  resources :tweets
+  get '/new_tweet' => 'tweets#new'
+  get '/all' => 'tweets#index'
 end
 ```
 
@@ -60,15 +60,15 @@ Now let's say we want to return all the tweets made in a certain zipcode. We can
 
 ```ruby
 def index
-	if params[:zipcode]
-		@tweets = Tweet.where(zipcode: params[:zipcode])
-	else
-		@tweets = Tweet.all
-	end
-	respond_to do |format|
-		format.html #index.html.erb
-		format.xml {render xml: @tweets}
-	end
+  if params[:zipcode]
+    @tweets = Tweet.where(zipcode: params[:zipcode])
+  else
+    @tweets = Tweet.all
+  end
+  respond_to do |format|
+    format.html #index.html.erb
+    format.xml {render xml: @tweets}
+  end
 end
 ```
 
@@ -108,11 +108,11 @@ Then we have to hop over to the `tweets_controller.rb` to add a check to see if 
 
 ```ruby
 def index
-	if params[:name]
-		@zombie = Zombie.where(:name params[:name]).first
-		@tweets = @zombie.tweets
-	else
-		@tweets = Tweet.all
-	end
+  if params[:name]
+    @zombie = Zombie.where(:name params[:name]).first
+    @tweets = @zombie.tweets
+  else
+    @tweets = Tweet.all
+  end
 end
 ```

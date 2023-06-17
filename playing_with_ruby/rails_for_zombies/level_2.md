@@ -56,7 +56,7 @@ validates_length_of :password, minimum: 3
 validates_formate_of :email, with: /regex/i
 validates_inclusion_of :age, in: 21, 99
 validates_exclusion_of :age, in 0...21,
-	message: "Sorry, you must be over 21"
+  message: "Sorry, you must be over 21"
 ```
 
 We can write this differently:
@@ -75,7 +75,7 @@ Let's go into the `Zombie` model and tell the application that a zombie can have
 
 ```ruby
 class Zombie < ActiveRecord::Base
-	has_many :tweets
+  has_many :tweets
 end
 ```
 
@@ -85,7 +85,7 @@ To tell the application that a single tweet belongs to a zombie, we go into the 
 
 ```ruby
 class Tweet < ActiveRecord::Base
-	belongs_to :zombie
+  belongs_to :zombie
 end
 ```
 
