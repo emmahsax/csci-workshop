@@ -11,7 +11,7 @@ public class Rand5FromRand7 {
         int ans = rand7();
 
         while (ans > 5) {
-        ans = rand7();
+            ans = rand7();
         }
 
         return ans;

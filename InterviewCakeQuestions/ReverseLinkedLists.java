@@ -14,10 +14,10 @@ public class ReverseLinkedLists {
         Node nextNode = null;
 
         while (currentNode != null) {
-        nextNode = currentNode.next;
-        currentNode.next = previousNode;
-        previousNode = currentNode;
-        currentNode = nextNode;
+            nextNode = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
         }
 
         return previousNode;

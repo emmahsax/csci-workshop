@@ -9,15 +9,15 @@ public class ParenthesisMatching {
         int parenCount = 0;
 
         for (int i = index + 1; i < sentence.length(); i++) {
-        if (sentence.charAt(i) == '(') {
-            parenCount++;
-        } else if (sentence.charAt(i) == ')') {
-            if (parenCount == 0) {
-            return i;
-            } else {
-            parenCount--;
+            if (sentence.charAt(i) == '(') {
+                parenCount++;
+            } else if (sentence.charAt(i) == ')') {
+                if (parenCount == 0) {
+                    return i;
+                } else {
+                    parenCount--;
+                }
             }
-        }
         }
 
         throw new IllegalArgumentException("No closing parenthesis");

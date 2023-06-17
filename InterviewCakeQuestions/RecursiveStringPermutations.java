@@ -8,7 +8,7 @@ public class RecursiveStringPermutations {
         Set<String> permutationsSet = new HashSet<String>();
 
         if (input.length() <= 1) {
-        return new HashSet<String>(Arrays.asList(input));
+            return new HashSet<String>(Arrays.asList(input));
         }
 
         String inputExceptLastLetter = input.substring(0, inputString.length() - 1);
@@ -17,10 +17,10 @@ public class RecursiveStringPermutations {
         Set<String> permutationsExceptLastLetter = getPermutations(inputExceptLastLetter);
 
         for (String permutationSoFar : permutationsExceptLastLetter) {
-        for (int i = 0; i <= permutationSoFar.length(); i++) {
-            String permutation = permutationsSoFar.substring(0, i) + lastLetter + permutationsSoFar.substring(i);
-            permutationsSet.add(permutation);
-        }
+            for (int i = 0; i <= permutationSoFar.length(); i++) {
+                String permutation = permutationsSoFar.substring(0, i) + lastLetter + permutationsSoFar.substring(i);
+                permutationsSet.add(permutation);
+            }
         }
 
         return permutationsSet;

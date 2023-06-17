@@ -17,17 +17,17 @@ public class Rand7FromRand5 {
         // };
 
         while (true) {
-        int rand1 = rand5() - 1;
-        int rand2 = rand5() - 1;
+            int rand1 = rand5() - 1;
+            int rand2 = rand5() - 1;
 
-        // this math is simulating the nested array commented out above
-        int potentialOutcome = ((rand1 * 5) + rand2) + 1; // + 1 to not be "indexed at zero"
+            // this math is simulating the nested array commented out above
+            int potentialOutcome = ((rand1 * 5) + rand2) + 1; // + 1 to not be "indexed at zero"
 
-        if (potentialOutcome > 21) {
-            continue;
-        }
+            if (potentialOutcome > 21) {
+                continue;
+            }
 
-        return potentialOutcome % 7 + 1;
+            return potentialOutcome % 7 + 1;
         }
     }
 }

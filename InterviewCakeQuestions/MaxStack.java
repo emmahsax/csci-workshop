@@ -14,7 +14,7 @@ public class MaxStack {
     public int push(int element) {
         stack.push(element);
         if (maxsStack.empty() || element >= (int) maxsStack.peek()) {
-        maxsStack.push(element);
+            maxsStack.push(element);
         }
         return element;
     }
@@ -22,7 +22,7 @@ public class MaxStack {
     public int pop() {
         int element = (int) stack.pop();
         if (element == (int) maxsStack.peek()) {
-        maxsStack.pop();
+            maxsStack.pop();
         }
         return element
     }

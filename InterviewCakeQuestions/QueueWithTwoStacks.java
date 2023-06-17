@@ -19,7 +19,7 @@ public class QueueWithTwoStacks {
 
     public static int dequeue() {
         if (outStack.empty()) {
-        transferInStackToOutStack();
+            transferInStackToOutStack();
         }
 
         return outStack.pop();
@@ -27,8 +27,8 @@ public class QueueWithTwoStacks {
 
     public static void transferInStackToOutStack() {
         while (!inStack.empty()) {
-        int element = inStack.pop();
-        outStack.push(element);
+            int element = inStack.pop();
+            outStack.push(element);
         }
     }
 }

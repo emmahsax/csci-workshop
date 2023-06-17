@@ -11,23 +11,23 @@
  */
 
 public class HighestStockPrice {
-  public static int getMaxProfit(int[] stocks) {
-    if (stocks.length < 2) {
-      throw new IllegalArgumentException("Getting a profit requires at least 2 prices");
+    public static int getMaxProfit(int[] stocks) {
+        if (stocks.length < 2) {
+            throw new IllegalArgumentException("Getting a profit requires at least 2 prices");
+        }
+
+        int minPrice = stocks[0];
+        int maxProfit = stocks[1] - stocks[0];
+        int currentPrice;
+        int potentialProfit;
+
+        for (int i = 1; i < stocks.length; i++) {
+            currentPrice = stocks[i];
+            potentialProfit = currentPrice - minPrice;
+            maxProfit = Math.max(maxProfit, potentialProfit);
+            minPrice = Math.min(minPrice, currentPrice);
+        }
+
+        return maxProfit;
     }
-
-    int minPrice = stocks[0];
-    int maxProfit = stocks[1] - stocks[0];
-    int currentPrice;
-    int potentialProfit;
-
-    for (int i = 1; i < stocks.length; i++) {
-      currentPrice = stocks[i];
-      potentialProfit = currentPrice - minPrice;
-      maxProfit = Math.max(maxProfit, potentialProfit);
-      minPrice = Math.min(minPrice, currentPrice);
-    }
-
-    return maxProfit;
-  }
 }

@@ -9,19 +9,19 @@
  */
 
 public class InFlightEntertainment {
-  public static boolean moviesMatchFlightLength(int flightLength, int[] movieLengths) {
-    Set<Integer> movieLengthsSeen = new HashSet<Integer>();
+    public static boolean moviesMatchFlightLength(int flightLength, int[] movieLengths) {
+        Set<Integer> movieLengthsSeen = new HashSet<Integer>();
 
-    for (int firstMovieLength : movieLengths) {
-      int matchingSecondMovieLength = flightLength - firstMovieLength;
+        for (int firstMovieLength : movieLengths) {
+            int matchingSecondMovieLength = flightLength - firstMovieLength;
 
-      if (movieLengthsSeen.contains(matchingSecondMovieLength)) {
-        return true;
-      }
+            if (movieLengthsSeen.contains(matchingSecondMovieLength)) {
+                return true;
+            }
 
-      movieLengthsSeen.add(firstMovieLength);
+            movieLengthsSeen.add(firstMovieLength);
+        }
+
+        return false;
     }
-
-    return false;
-  }
 }

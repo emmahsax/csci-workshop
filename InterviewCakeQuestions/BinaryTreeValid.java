@@ -41,15 +41,15 @@ public boolean validBinaryTree(BinaryTreeNode headNode) {
         BinaryTreeNode node = nodeStack.pop;
 
         if ((node.value < node.lowerBound) || (node.value > node.upperBound)) { // node doesn't fit within its set bounds
-        return false;
+            return false;
         }
 
         if (node.left != null) {
-        nodeStack.push(node.left);
+            nodeStack.push(node.left);
         }
 
         if (node.right != null) {
-        nodeStack.push(node.right);
+            nodeStack.push(node.right);
         }
     }
 
