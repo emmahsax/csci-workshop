@@ -16,11 +16,11 @@ public class PermutationPalindrome {
         Set<Character> unpairedCharacters = new HashSet<Character>();
 
         for (char letter : input.toCharArray()) {
-        if (unpairedCharacters.contains(letter)) {
-            unpairedCharacters.remove(letter);
-        } else {
-            unpairedCharacters.add(letter);
-        }
+            if (unpairedCharacters.contains(letter)) {
+                unpairedCharacters.remove(letter);
+            } else {
+                unpairedCharacters.add(letter);
+            }
         }
 
         return unpairedCharacters.size() <= 1;

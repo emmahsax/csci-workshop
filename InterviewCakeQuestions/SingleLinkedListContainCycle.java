@@ -14,12 +14,12 @@ public class SingleLinkedListContainCycle {
         int fastRunner = firstNode;
 
         while (slowRunner.next != null && fastRunner.next.next != null) {
-        slowRunner = firstNode.next;
-        fastRunner = firstNode.next.next;
+            slowRunner = firstNode.next;
+            fastRunner = firstNode.next.next;
 
-        if (slowRunner == fastRunner) {
-            return true;
-        }
+            if (slowRunner == fastRunner) {
+                return true;
+            }
         }
 
         return false;
@@ -30,7 +30,7 @@ public class SingleLinkedListContainCycle {
         public LinkedListNode next;
 
         public LinkedListNode(int value) {
-        this.value = value;
+            this.value = value;
         }
     }
 }
