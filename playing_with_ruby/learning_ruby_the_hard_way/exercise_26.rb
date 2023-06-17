@@ -45,7 +45,7 @@ module Ex25
     Ex25.print_first_word(words)
     Ex25.print_last_word(words)
   end
-  
+
 end
 
 puts "Let's practice everything."

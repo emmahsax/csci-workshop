@@ -30,5 +30,5 @@ public class ReverseLinkedLists {
     public Node(int value) {
       this.value = value;
     }
-  } 
+  }
 }

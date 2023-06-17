@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class ColorDeciderProject {
 	private static ArrayList<Dancer> dancers = new ArrayList<Dancer>();
-	
+
 	public static void main(String[] args) {
 		dancers.add(new Dancer("Emma")); // 0
 		dancers.add(new Dancer("Halie")); // 1
@@ -49,7 +49,7 @@ public class ColorDeciderProject {
 
 		printAll();
 	}
-	
+
 	public static void printAll() {
 		for (Dancer dancer : dancers) {
 			System.out.println(dancer.getName() + " will wear " + dancer.getColor());
@@ -63,11 +63,11 @@ public class ColorDeciderProject {
 			}
 		}
 	}
-	
+
 	public static void assignColor(Dancer dancer) {
 		Random rand = new Random();
 		int x = rand.nextInt(8);
-		
+
 		switch (x) {
 			case 0: dancer.setColor(Color.DARK_BLUE);
 			break;
@@ -87,7 +87,7 @@ public class ColorDeciderProject {
 			break;
 		}
 	}
-	
+
 	public static void checkColors() {
 		for (Dancer dancer : dancers) {
 			for (Dancer noMatch : dancer.getCannotMatches()) {
@@ -95,7 +95,7 @@ public class ColorDeciderProject {
 			}
 		}
 	}
-	
+
 	// Could potentially get into an infinite loop (even though I think the chances
 	// are small...
 	public static void checkTwo(Dancer d1, Dancer d2) {

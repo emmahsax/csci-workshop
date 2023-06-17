@@ -16,7 +16,7 @@ end
 #end
 
 # same as above, but in a more Ruby style
-# this and the next one are the preferred 
+# this and the next one are the preferred
 # way Ruby for-loops are written
 fruits.each do |fruit|
   puts "A fruit of type: #{fruit}"

@@ -1,4 +1,4 @@
-## Takes a file and will empty it and write more lines or 
+## Takes a file and will empty it and write more lines or
 ## write over more lines (taken as inputs)
 
 puts "We're going to erase #{ARGV[0]}"

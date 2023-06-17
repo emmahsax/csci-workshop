@@ -8,7 +8,7 @@ def my_while_loop (ending_num)
 	while i <= ending_num do
 		puts "Current number i is #{i}"
 		numbers.push(i)
-	
+
 		i += 1
 		puts "Numbers now: ", numbers
 		puts "Next number i is #{i}"
@@ -20,7 +20,7 @@ def my_while_loop (ending_num)
 	numbers.each do |i|
 		puts i
 	end
-	
+
 	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 end
 

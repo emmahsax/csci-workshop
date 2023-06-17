@@ -43,4 +43,3 @@ try{
     logger.log(ex);
     throw ex;
 }
-

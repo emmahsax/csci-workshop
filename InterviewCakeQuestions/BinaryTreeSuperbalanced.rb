@@ -35,7 +35,7 @@ def binary_tree_is_balanced?(tree_root)
     if !node.left && !node.right # this is a leaf node
       if !depths.include?(depth)
         depths.push(depth)
-        
+
         if (depths.length > 2) || (depths.length == 2 && depths[0] - depths[1].abs > 1)
           return false
         end
