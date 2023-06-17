@@ -2,7 +2,7 @@
 
 class MegaGreeter
 	attr_accessor :names
-	
+
 	# create the object
 	def initialize(names = "World")
 		@names = names
@@ -17,23 +17,22 @@ class MegaGreeter
 			@names.each do |name|
 				puts "Hello #{name}!"
 			end
-    		else
-      			puts "Hello #{@names}!"
-    		end
-  	end
+		else
+				puts "Hello #{@names}!"
+		end
+  end
 
-  	# Say bye to everybody
+  # Say bye to everybody
  	def say_bye
-    		if @names.nil?
-      			puts "..."
-    		elsif @names.respond_to?("join")
-      			# Join the list elements with commas
-      			puts "Goodbye #{@names.join(", ")}. Come back soon!"
-    		else
-      			puts "Goodbye #{@names}. Come back soon!"
-   		end
-  	end
-
+		if @names.nil?
+			puts "..."
+		elsif @names.respond_to?("join")
+			# Join the list elements with commas
+			puts "Goodbye #{@names.join(", ")}. Come back soon!"
+		else
+			puts "Goodbye #{@names}. Come back soon!"
+		end
+  end
 end
 
 

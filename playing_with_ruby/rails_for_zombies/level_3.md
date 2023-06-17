@@ -8,7 +8,7 @@ Within each folder in `views`, we'll have an `index.html.erb` and a `show.html.e
 
 Inside `app/views/tweets/show.html.erb`:
 
-```
+```html
 <!DOCTYPE html>
 <html>
 	<head><title>RailsForZombies</title></head>
@@ -25,7 +25,7 @@ The `<%...%>` is a way of saying this is going to Ruby code, so execute it. When
 
 Now, if we wanted to use this basic header information again, it isn't very D.R.Y., or don't repeat yourself. Let's move it to `app/views/layouts/application.html.erb`.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 	<head><title>RailsForZombies</title></head>
@@ -38,7 +38,7 @@ Now, if we wanted to use this basic header information again, it isn't very D.R.
 
 The yield command means this where the contents of the `show.html.erb` would go. This file would end up looking like this:
 
-```
+```html
 <% tweet = Tweet.find(1) %>
 <h1><%= tweet.status %></h1>
 <p>Posted by <%= tweet.zombie.name %></p>
@@ -46,23 +46,23 @@ The yield command means this where the contents of the `show.html.erb` would go.
 
 What if we wanted to create a link that would show the zombie's profile page?
 
-```
+```html
 <%= link_to tweet.zombie.name, zombie_path(tweet.zombie) %>
 
-OR
+<!-- OR -->
 
 <%= link_to tweet.zombie.name, tweet.zombie %>
 ```
 
 The recipe for that is:
 
-```
+```html
 <%= link_to text_to_show, model_instance %>
 ```
 
 As with tweets, shorter is better. Now we move the link up into the code:
 
-```
+```html
 <% tweet = Tweet.find(1) %>
 <h1><%= tweet.status %></h1>
 <p>Posted by <%= link_to tweet.zombie.name, tweet.zombie %></p>
@@ -70,7 +70,7 @@ As with tweets, shorter is better. Now we move the link up into the code:
 
 `link_to` is a special Rails command, meaning it has its own API and helper pieces to go with it. A confirmation message is one of these:
 
-```
+```html
 <% tweet = Tweet.find(1) %>
 <h1><%= tweet.status %></h1>
 <p>Posted by <%= link_to tweet.zombie.name
@@ -80,7 +80,7 @@ As with tweets, shorter is better. Now we move the link up into the code:
 
 Remember how the template for the entire application is in `app/views/layouts/application.html.erb`? But what about the `app/views/tweets/index.html.erb`? This is where we'll list all of the tweets.
 
-```
+```html
 <h1>Listing tweets</h1>
 <table>
 	<tr>
@@ -98,7 +98,7 @@ Remember how the template for the entire application is in `app/views/layouts/ap
 
 The loop is saying to go through all of the tweets, and then print the status and the name. Now what if we wanted everything in the table to be links:
 
-```
+```html
 <% Tweet.all.each do |tweet| %>
 	<tr>
 		<td><%= link_to tweet.status, tweet%></td>
@@ -109,7 +109,7 @@ The loop is saying to go through all of the tweets, and then print the status an
 
 What if we pull up the page and there aren't any tweets yet? We want it to actually tell us that there aren't any tweets. So we need an `if`:
 
-```
+```html
 <% tweets = Tweet.all %>
 <% tweets.each do |tweet| %>
 	<tr>
@@ -124,7 +124,7 @@ What if we pull up the page and there aren't any tweets yet? We want it to actua
 
 What if a zombie wants to edit or delete a tweet?
 
-```
+```html
 <% tweets.each do |tweet| %>
 	<tr>
 		<td><%= link_to tweet.status, tweet %></td>

@@ -8,7 +8,7 @@ This is assuming that `irb` is typed into a terminal:
 
 Ruby can also be used as a basic calculator with operators such as +, -, \*, and / (and ** is "to the power of”):
 
-```
+```ruby
 Math.sqrt(9)
 => 3.0
 ```
@@ -17,7 +17,7 @@ Notice that the results is not just 3 because `sqrt` returns a floating-point nu
 
 We can assign the results to a variable:
 
-```
+```ruby
 a = 3**2
 => 9
 b = 4**2
@@ -30,7 +30,7 @@ Math.sqrt(a+b)
 
 We can define methods using `def`:
 
-```
+```ruby
 def h
   puts “Hello World!”
 end
@@ -40,7 +40,7 @@ The new method is named h, and end is signifying the end of the method. To call 
 
 Our methods can also take in a parameter:
 
-```
+```ruby
 def h1(name)
   puts “Hello #{name}!”
 end
@@ -48,7 +48,7 @@ end
 
 This is called by typing `h(“Emma”)` or `h “Emma”`. But let’s say that we still want `World` to show up in the message if no name is provided. We can do this by the following pieces of code:
 
-```
+```ruby
 def h2(name = “World”)
   puts “Hello #{name}!”
 end
@@ -56,7 +56,7 @@ end
 
 And then this can be called with or without a name!
 
-```
+```ruby
 h
 => Hello World!
 
@@ -68,7 +68,7 @@ h “Emma”
 
 The first class will be inside the file `greeter.rb`. When we use that, we can create new greeters by using:
 
-```
+```ruby
 g = Greeter.new(“Emma”)
 => #<Greeter:0x007f8ef10847b0 @name="Emma">
 

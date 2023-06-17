@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class SafePassage {
-	
+
 	private static ArrayList<Integer> notSafe = new ArrayList<Integer>();
 	private static ArrayList<Integer> safe = new ArrayList<Integer>();
 	private static int total = 0;
@@ -14,26 +14,26 @@ public class SafePassage {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		
+
 		int caseAmount = input.nextInt();
-		
+
 		int[] arr = new int[caseAmount];
-		
+
 		for (int i = 0 ; i < caseAmount; i++){
 			arr[i] = input.nextInt();
 		}
-		
+
 		Arrays.sort(arr);
 		ArrayList<Integer> sortedArr = new ArrayList<Integer>();
-		
+
 		for (int i = 0; i < arr.length; i++) {
 			sortedArr.add(arr[i]);
 			notSafe.add(arr[i]);
 		}
 		secondFastest = sortedArr.get(1);
 		fastest = sortedArr.get(0);
-		
-		
+
+
 		while (safe.size() != caseAmount) {
 //			System.out.println("Not safe: " + notSafe);
 //			System.out.println("Safe: " + safe);
@@ -57,7 +57,7 @@ public class SafePassage {
 //			System.out.println(total);
 //			System.out.println("Cloak: " + cloakAtDorm);
 		}
-		
+
 		System.out.println(total);
 
 		input.close();
@@ -70,7 +70,7 @@ public class SafePassage {
 		total += secondFastest;
 		cloakAtDorm = true;
 	}
-	
+
 	//call when 2nd fastest is safe and cloak is false
 	private static void moveSlowest() {
 		int slowGuySpeed = notSafe.remove(notSafe.size()-1);
@@ -79,7 +79,7 @@ public class SafePassage {
 		total += slowGuySpeed;
 		cloakAtDorm = true;
 	}
-	
+
 	//call when cloak is true
 	private static void sendFastestBack() {
 		int fastest = safe.remove(0);
@@ -87,7 +87,7 @@ public class SafePassage {
 		total += fastest;
 		cloakAtDorm = false;
 	}
-	
+
 	//case three people left, send fastest and slowest
 	private static void caseThreeLeft(){
 		int slowGuySpeed = notSafe.remove(notSafe.size()-1);

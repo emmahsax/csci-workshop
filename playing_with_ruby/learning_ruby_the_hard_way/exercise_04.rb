@@ -11,7 +11,6 @@ cars_driven = drivers #cars with a driver
 carpool_capacity = cars_driven * space_in_a_car #how many spaces in cars that have drivers
 average_passengers_per_car = passengers / cars_driven #how many passengers per car (average)
 
-
 puts "There are #{cars} cars available."
 puts "There are only #{drivers} drivers available."
 puts "There will be #{cars_not_driven} empty cars today."
