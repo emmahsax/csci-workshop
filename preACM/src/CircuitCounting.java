@@ -9,8 +9,8 @@ public class CircuitCounting {
         int[] y = new int[caseAmount];
 
         for (int i = 0; i < caseAmount; i++){
-        x[i] = input.nextInt();
-        y[i] = input.nextInt();
+            x[i] = input.nextInt();
+            y[i] = input.nextInt();
         }
 
         int[] values = {0, 1, 2, 3, 4};

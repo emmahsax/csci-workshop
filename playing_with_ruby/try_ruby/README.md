@@ -138,18 +138,18 @@ For the next few exercises, let's save a poem to a variable. This way we can use
 
 ```ruby
 poem = """
-  My toast has flown from my hand
+    My toast has flown from my hand
     And my toast has gone to the moon.
     But when I saw it on the television,
     Planting our flag on Halley's comet,
     More still did I want to eat it.
-    """
+   """
 => "My toast has flown from my hand
-  And my toast has gone to the moon.
-  But when I saw it on the television,
-  Planting our flag on Halley's comet,
-  More still did I want to eat it.
-  "
+    And my toast has gone to the moon.
+    But when I saw it on the television,
+    Planting our flag on Halley's comet,
+    More still did I want to eat it.
+   "
 ```
 
 We can see what this would look like if we print it:
@@ -157,7 +157,7 @@ We can see what this would look like if we print it:
 ```ruby
 print poem
 => "My toast has flown from my hand
-  And my toast has gone to the moon.
+    And my toast has gone to the moon.
     But when I saw it on the television,
     Planting our flag on Halley's comet,
     More still did I want to eat it.
@@ -172,7 +172,7 @@ poem['toast'] = 'honeydew'
 
 print poem
 => "My honeydew has flown from my hand
-  And my toast has gone to the moon.
+    And my toast has gone to the moon.
     But when I saw it on the television,
     Planting our flag on Halley's comet,
     More still did I want to eat it.
@@ -251,10 +251,10 @@ books["The Mists of Avalon"] = :mediocre
 
 books
 => {"Gravity's Rainbow"=>:splendid,
-  "Fifty Shades of Grey"=>:abysmal,
-  "Harry Poter and the Deathly Hallows"=>:splendid,
-  "The Lion, the Witch, and the Wardrobe"=>:splendid,
-  "The Mists of Avalon"=>:mediocre
+     "Fifty Shades of Grey"=>:abysmal,
+     "Harry Poter and the Deathly Hallows"=>:splendid,
+     "The Lion, the Witch, and the Wardrobe"=>:splendid,
+     "The Mists of Avalon"=>:mediocre
    }
 
 books.length
@@ -398,9 +398,9 @@ def load_comics (path)
   comics
 end
 => {"Achewood"=>"http://achewoods.com/",
-  "Dinosaur Comics"=>"http://qwantz.com/",
-  "Perry Bible Fellowship"=>"http://cheston.com/pbf/archive.html",
-  "Get Your War On"=>"http://mnftiu.cc/"
+    "Dinosaur Comics"=>"http://qwantz.com/",
+    "Perry Bible Fellowship"=>"http://cheston.com/pbf/archive.html",
+    "Get Your War On"=>"http://mnftiu.cc/"
    }
 ```
 
