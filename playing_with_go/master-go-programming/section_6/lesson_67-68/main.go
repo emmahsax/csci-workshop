@@ -12,12 +12,12 @@ package main
 
 // import statements are file scoped
 import (
-	"fmt"
+    "fmt"
 
-	// import "fmt" -> error, within the same scope, unique names
+    // import "fmt" -> error, within the same scope, unique names
 
-	// importing as another name (alias) is permitted
-	f "fmt"
+    // importing as another name (alias) is permitted
+    f "fmt"
 )
 
 // variables or constant declared outside any function are package scoped
