@@ -48,15 +48,3 @@ go fmt FILE_NAME.go
 ```
 
 \*Adding `-l` will print out which files are modified, if passing in a directory
-
-
----
-
-Tab character for reference
-
-```go
-import (
-	"fmt"
-	"os"
-)
-```
