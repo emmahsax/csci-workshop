@@ -9,19 +9,19 @@
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    // First argument in os.Args is ALWAYS the path called
+	// First argument in os.Args is ALWAYS the path called
 
-    fmt.Println("os.Args:", os.Args) // os.Args is slice of strings ([]string)
+	fmt.Println("os.Args:", os.Args) // os.Args is slice of strings ([]string)
 
-    // accessing command line arguments using indexes
-    fmt.Println("Path:", os.Args[0])
-    fmt.Println("1st Argument:", os.Args[1])
-    fmt.Println("2nd Argument:", os.Args[2])
-    fmt.Println("No. of items inside os.Args:", len(os.Args))
-    fmt.Println("No. of items actually passed:", len(os.Args) - 1)
+	// accessing command line arguments using indexes
+	fmt.Println("Path:", os.Args[0])
+	fmt.Println("1st Argument:", os.Args[1])
+	fmt.Println("2nd Argument:", os.Args[2])
+	fmt.Println("No. of items inside os.Args:", len(os.Args))
+	fmt.Println("No. of items actually passed:", len(os.Args)-1)
 }

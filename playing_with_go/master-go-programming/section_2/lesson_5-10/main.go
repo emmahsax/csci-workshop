@@ -19,13 +19,13 @@ const y = 0
 // it is the entry point for the executable program
 // Go uses brace brackets to delimit code blocks
 func main() {
-    // Local Scoped Variables and Constants Declarations, calling functions etc
-    var a int = 7
-    var b float64 = 3.5
-    const c int = 10
+	// Local Scoped Variables and Constants Declarations, calling functions etc
+	var a int = 7
+	var b float64 = 3.5
+	const c int = 10
 
-    // Println() function prints out a line to stdout
-    // It belongs to package fmt
-    fmt.Println("Hello Go world!") // => Hello Go world!
-    fmt.Println(a, b, c, x)        // => 7 3.5 10 100
+	// Println() function prints out a line to stdout
+	// It belongs to package fmt
+	fmt.Println("Hello Go world!") // => Hello Go world!
+	fmt.Println(a, b, c, x)        // => 7 3.5 10 100
 }
