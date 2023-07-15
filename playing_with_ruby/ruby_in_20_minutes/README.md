@@ -46,7 +46,7 @@ def h1(name)
 end
 ```
 
-This is called by typing `h(“Emma”)` or `h “Emma”`. But let’s say that we still want `World` to show up in the message if no name is provided. We can do this by the following pieces of code:
+This is called by typing `h(“Emma”)` or `h “Emma”`. But let's say that we still want `World` to show up in the message if no name is provided. We can do this by the following pieces of code:
 
 ```ruby
 def h2(name = “World”)
@@ -85,6 +85,6 @@ You can use `Greeter.instance_methods` to see all of the instance methods that a
 
 `=> [:initialize, :say_hello, :say_goodbye]`
 
-We can change classes once they’re already in use. By adding a simple line into the Greeter class, `attr_accessor :name`, we can make our class respond to a `name`, by changing the name of an object (using `name=`), printing just the name (using `name`), or using the class as it was intended before.
+We can change classes once they're already in use. By adding a simple line into the Greeter class, `attr_accessor :name`, we can make our class respond to a `name`, by changing the name of an object (using `name=`), printing just the name (using `name`), or using the class as it was intended before.
 
 A more advanced version of the greeter, megaGreeter, can be found in the `megaGreeter.rb` file. Using loops and simple checks, such as `@names.repspond_to?(“each”)`, the megaGreeter is capable of greeting multiple people at once.
