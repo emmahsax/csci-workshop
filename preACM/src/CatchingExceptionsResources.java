@@ -34,7 +34,7 @@ public class ExcepTest{
 // catching multiple exceptions with one catch block
 
 try{
-    System.out.println(“printing something”);
+    System.out.println("printing something");
 } catch (IOException|SQLException ex) {
     logger.log(ex);
     throw ex;

@@ -49,7 +49,7 @@ var writeToDb = true // not recommended
 
 func main() {
 
-	// use fewer letters, don’t be too verbose especially in smaller scopes
+	// use fewer letters, don't be too verbose especially in smaller scopes
 	var packetsReceived int // NOT OK, too verbose
 	var n int               // OK
 	_, _ = packetsReceived, n

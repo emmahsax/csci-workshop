@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class SampleFile {
     public static void main(String[] args) {
-        String inputFile = “C://Users/DKC3/Desktop/stuff/testInput.txt”;
-        String outputFile = “C://Users/DKC3/Desktop/stuff/testOutput.txt”;
+        String inputFile = "C://Users/DKC3/Desktop/stuff/testInput.txt";
+        String outputFile = "C://Users/DKC3/Desktop/stuff/testOutput.txt";
         try {
             BufferedReader in = new BufferedReader(new FileReader(inputFile));
             PrintWriter out = new PrintWriter(new FileWriter(outputFile));
