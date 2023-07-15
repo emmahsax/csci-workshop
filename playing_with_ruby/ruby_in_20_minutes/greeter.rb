@@ -10,6 +10,6 @@ class Greeter
   end
 
   def say_goodbye
-    puts “Goodbye #{@name}, come back soon."
+    puts "Goodbye #{@name}, come back soon."
   end
 end
