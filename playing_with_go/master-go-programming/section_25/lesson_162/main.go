@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 type vehicle interface {
-    License() string
-    Name() string
+	License() string
+	Name() string
 }
 
 type car struct {
-    brand     string
-    licenseNo string
+	brand     string
+	licenseNo string
 }
 
 func (c car) License() string {
@@ -21,11 +21,11 @@ func (c car) Name() string {
 }
 
 type cube struct {
-    edge float64
+	edge float64
 }
 
 func volume(c cube) float64 {
-    return c.edge * c.edge * c.edge
+	return c.edge * c.edge * c.edge
 }
 
 func main() {
@@ -51,8 +51,8 @@ func main() {
 
 	// EXERCISE 3
 
-    var x interface{} = cube{edge: 5}
+	var x interface{} = cube{edge: 5}
 	fmt.Printf("%T\n", x)
-    v := volume(x.(cube))
-    fmt.Printf("Cube Volume: %v\n", v)
+	v := volume(x.(cube))
+	fmt.Printf("Cube Volume: %v\n", v)
 }

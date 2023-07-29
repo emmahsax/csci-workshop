@@ -28,7 +28,7 @@ func (b *book) discount() {
 }
 
 func (b *book) changePrice(p float64) {
-    b.price = p
+	b.price = p
 }
 
 func main() {
@@ -52,10 +52,10 @@ func main() {
 	// EXERCISE 4
 
 	// book value
-    bestBook := book{title: "The Trial by Kafka", price: 9.9}
+	bestBook := book{title: "The Trial by Kafka", price: 9.9}
 
-    // changing the price
-    bestBook.changePrice(11.99)
+	// changing the price
+	bestBook.changePrice(11.99)
 
-    fmt.Printf("Book's price: %.2f\n", bestBook.price) // no change
+	fmt.Printf("Book's price: %.2f\n", bestBook.price) // no change
 }

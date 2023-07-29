@@ -21,7 +21,7 @@ type geometry interface {
 
 type cube struct {
 	color string
-	edge float64
+	edge  float64
 }
 
 func (c cube) area() float64 {
