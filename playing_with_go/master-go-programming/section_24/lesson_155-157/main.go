@@ -3,7 +3,7 @@
 // Go Playground: https://play.golang.org/p/0A07wpGtXYa
 /////////////////////////////////
 
-// A type assertion provides access to an interface’s concrete value.
+// A type assertion provides access to an interface's concrete value.
 
 package main
 

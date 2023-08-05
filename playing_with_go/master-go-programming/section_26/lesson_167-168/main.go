@@ -51,7 +51,7 @@ func main() {
 	fmt.Println("main execution started")
 
 	// 1.
-	// Create a new instance of sync.WaitGroup (we’ll call it symply wg)
+	// Create a new instance of sync.WaitGroup (we'll call it symply wg)
 	// This WaitGroup is used to wait for all the goroutines that have been launched to finish.
 	var wg sync.WaitGroup
 
