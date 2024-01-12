@@ -16,7 +16,7 @@ public class Fibonacci {
             int ans = prevCalculatedFibs.get(input);
             if (ans != null) { // we have seen this input already
                 return ans;
-            } else { // we haven’t seen this input already
+            } else { // we haven't seen this input already
                 int calculated_ans = fib(input - 1) + fib(input - 2);
                 prevCalculatedFibs.put(input, calculated_ans);
                 return calculated_ans;
