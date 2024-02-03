@@ -1,3 +1,3 @@
-module primeapp
+module primeApp
 
 go 1.21.0
