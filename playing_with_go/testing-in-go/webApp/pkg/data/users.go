@@ -2,8 +2,9 @@ package data
 
 import (
 	"errors"
-	"golang.org/x/crypto/bcrypt"
 	"time"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 // User describes the data for the User type.
@@ -26,7 +27,7 @@ func (u *User) PasswordMatches(plainText string) (bool, error) {
 	if err != nil {
 		switch {
 		case errors.Is(err, bcrypt.ErrMismatchedHashAndPassword):
-			// invalid password
+			// Invalid password
 			return false, nil
 		default:
 			return false, err

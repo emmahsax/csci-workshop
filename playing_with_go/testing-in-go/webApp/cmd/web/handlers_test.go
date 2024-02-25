@@ -126,7 +126,7 @@ func addContextAndSessionToRequest(req *http.Request, app application) *http.Req
 	return req.WithContext(ctx)
 }
 
-func Test_app_Login(t *testing.T) {
+func Test_application_Login(t *testing.T) {
 	var tests = []struct {
 		name               string
 		postedData         url.Values
