@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
 )
 
 func (app *application) routes() http.Handler {
@@ -22,11 +22,12 @@ func (app *application) routes() http.Handler {
 	mux.Route("/user", func(mux chi.Router) {
 		mux.Use(app.auth)
 		mux.Get("/profile", app.Profile)
+		mux.Post("/upload-profile-pic", app.UploadProfilePic)
 	})
 
 	// Static assets
 	fileServer := http.FileServer(http.Dir("./static/"))
-	mux.Handle("/static/*", http.StripPrefix("static", fileServer))
+	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
 
 	return mux
 }
