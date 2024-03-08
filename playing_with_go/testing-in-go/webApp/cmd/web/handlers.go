@@ -120,30 +120,30 @@ func (app *application) authenticate(r *http.Request, user *data.User, password 
 }
 
 func (app *application) UploadProfilePic(w http.ResponseWriter, r *http.Request) {
-	// call a function that extracts a file from an upload (request)
+	// Call a function that extracts a file from an upload (request)
 	files, err := app.UploadFiles(r, uploadPath)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	// get the user from the session
+	// Get the user from the session
 	user := app.Session.Get(r.Context(), "user").(data.User)
 
-	// create a var of type data.UserImage
+	// Create a var of type data.UserImage
 	var i = data.UserImage{
 		UserID:   user.ID,
 		FileName: files[0].OriginalFileName,
 	}
 
-	// insert the user image into user_images
+	// Insert the user image into user_images
 	_, err = app.DB.InsertUserImage(i)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	// refresh the sessional variable "user"
+	// Refresh the sessional variable "user"
 	updatedUser, err := app.DB.GetUser(user.ID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -152,7 +152,7 @@ func (app *application) UploadProfilePic(w http.ResponseWriter, r *http.Request)
 
 	app.Session.Put(r.Context(), "user", updatedUser)
 
-	// redirect back to profile page
+	// Redirect back to profile page
 	http.Redirect(w, r, "/user/profile", http.StatusSeeOther)
 }
 
