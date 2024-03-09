@@ -9,3 +9,8 @@ on:
 jobs:
   gitleaks:
     uses: emmahsax/github-actions/.github/workflows/gitleaks.yml@main
+    with:
+      gitleaks_config_paths: "[
+        'setup_test.go',
+        'users_postgres_test.go',
+      ]"
