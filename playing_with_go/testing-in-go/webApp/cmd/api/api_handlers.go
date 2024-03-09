@@ -182,8 +182,8 @@ func (app *application) refreshUsingCookie(w http.ResponseWriter, r *http.Reques
 
 			// Send back JSON
 			_ = app.writeJSON(w, http.StatusOK, tokenPairs)
-			return
 
+			return
 		}
 	}
 
