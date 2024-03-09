@@ -17,3 +17,4 @@ hs_err_pid*
 playing_with_go/testing-in-go/bin/
 playing_with_go/testing-in-go/pkg/
 playing_with_go/testing-in-go/webApp/postgres-data/
+playing_with_go/testing-in-go/webApp/static/img/
