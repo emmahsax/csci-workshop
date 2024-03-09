@@ -16,15 +16,24 @@ func (m *TestDBRepo) Connection() *sql.DB {
 // AllUsers returns all users as a slice of *data.User
 func (m *TestDBRepo) AllUsers() ([]*data.User, error) {
 	var users []*data.User
+
 	return users, nil
 }
 
 // GetUser returns one user by id
 func (m *TestDBRepo) GetUser(id int) (*data.User, error) {
-	var user = data.User{
-		ID: 1,
+	var user = data.User{}
+	if id == 1 {
+		user = data.User{
+			ID:        1,
+			FirstName: "Admin",
+			LastName:  "User",
+			Email:     "admin@example.com",
+		}
+		return &user, nil
 	}
-	return &user, nil
+
+	return nil, errors.New("user not found")
 }
 
 // GetUserByEmail returns one user by email address
@@ -42,12 +51,17 @@ func (m *TestDBRepo) GetUserByEmail(email string) (*data.User, error) {
 		}
 		return &user, nil
 	}
+
 	return nil, errors.New("not found")
 }
 
 // UpdateUser updates one user in the database
 func (m *TestDBRepo) UpdateUser(u data.User) error {
-	return nil
+	if u.ID == 1 {
+		return nil
+	}
+
+	return errors.New("update failed - no user found")
 }
 
 // DeleteUser deletes one user from the database, by id
@@ -67,5 +81,5 @@ func (m *TestDBRepo) ResetPassword(id int, password string) error {
 
 // InsertUserImage inserts a user profile image into the database.
 func (m *TestDBRepo) InsertUserImage(i data.UserImage) (int, error) {
-	return 21, nil
+	return 1, nil
 }
