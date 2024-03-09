@@ -48,6 +48,16 @@ A web app and an API that allow uploading an image to a user's profile.
     ```bash
     curl http://localhost:8090/auth -X POST -H "Content-Type: application/json" -d '{"email":"admin@example.com","password":"secret"}'
     ```
+  * Get a user
+    ```bash
+    # Authenticate using the command above and use the `access_token` OR like this:
+    go run ./cmd/cli
+
+    curl http://localhost:8090/users/1 -X GET -H "Content-Type: application/json" -H "Authorization: Bearer ACCESS-TOKEN"
+    ```
+* Navigate to `http://localhost:8090`
+* Log in with the username `admin@example.com`, and the password `secret`
+* You can now see a valid JWT token and refresh token, and get the first user!
 
 #### Tests
 

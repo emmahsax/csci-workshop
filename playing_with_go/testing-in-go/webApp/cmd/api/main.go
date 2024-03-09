@@ -33,7 +33,7 @@ func main() {
 
 	app.DB = &dbrepo.PostgresDBRepo{DB: conn}
 
-	log.Printf("Starting api on port %d\n", port)
+	log.Printf("Starting api on port %d... go to http://localhost:8090/\n", port)
 
 	err = http.ListenAndServe(fmt.Sprintf(":%d", port), app.routes())
 	if err != nil {

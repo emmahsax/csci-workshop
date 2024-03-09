@@ -12,7 +12,15 @@ func (app *application) routes() http.Handler {
 
 	// Register middleware
 	mux.Use(middleware.Recoverer)
-	// Mux.Use(app.enableCORS) // Required for any kind of API
+	mux.Use(app.enableCORS) // Required for any kind of API
+
+	mux.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./html/"))))
+
+	mux.Route("/web", func(mux chi.Router) {
+		mux.Post("/auth", app.authenticate)
+		mux.Get("/refresh-token", app.refreshUsingCookie)
+		mux.Get("/logout", app.deleteRefreshCookie)
+	})
 
 	// Authentication routes
 	mux.Post("/auth", app.authenticate)

@@ -12,11 +12,13 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+// Credentials is the type used to unmarshal a JSON payload during authentication
 type Credentials struct {
 	Username string `json:"email"`
 	Password string `json:"password"`
 }
 
+// authenticate is the handler used to try to authenticate a user, and send them a JWT token if successful
 func (app *application) authenticate(w http.ResponseWriter, r *http.Request) {
 	var creds Credentials
 
@@ -47,6 +49,18 @@ func (app *application) authenticate(w http.ResponseWriter, r *http.Request) {
 		app.errorJSON(w, errors.New("unauthorized"), http.StatusUnauthorized)
 		return
 	}
+
+	http.SetCookie(w, &http.Cookie{
+		Name:     "__Host-refresh_token",
+		Path:     "/",
+		Value:    tokenPairs.RefreshToken,
+		Expires:  time.Now().Add(refreshTokenExpiry),
+		MaxAge:   int(refreshTokenExpiry.Seconds()),
+		SameSite: http.SameSiteStrictMode,
+		Domain:   "localhost",
+		HttpOnly: true,
+		Secure:   true,
+	})
 
 	// Send token to user
 	_ = app.writeJSON(w, http.StatusOK, tokenPairs)
@@ -113,6 +127,67 @@ func (app *application) refresh(w http.ResponseWriter, r *http.Request) {
 	})
 
 	_ = app.writeJSON(w, http.StatusOK, tokenPairs)
+}
+
+func (app *application) refreshUsingCookie(w http.ResponseWriter, r *http.Request) {
+	for _, cookie := range r.Cookies() {
+		if cookie.Name == "__Host-refresh_token" {
+			claims := &Claims{}
+			refreshToken := cookie.Value
+
+			_, err := jwt.ParseWithClaims(refreshToken, claims, func(token *jwt.Token) (interface{}, error) {
+				return []byte(app.JWTSecret), nil
+			})
+
+			if err != nil {
+				app.errorJSON(w, err, http.StatusBadRequest)
+				return
+			}
+
+			// if time.Unix(claims.ExpiresAt.Unix(), 0).Sub(time.Now()) > 30 * time.Second {
+			// 	app.errorJSON(w, errors.New("refresh token does not need renewed yet"), http.StatusTooEarly)
+			// 	return
+			// }
+
+			// Get the user id from the claims
+			userID, err := strconv.Atoi(claims.Subject)
+			if err != nil {
+				app.errorJSON(w, err, http.StatusBadRequest)
+				return
+			}
+
+			user, err := app.DB.GetUser(userID)
+			if err != nil {
+				app.errorJSON(w, errors.New("unknown user"), http.StatusBadRequest)
+				return
+			}
+
+			tokenPairs, err := app.generateTokenPair(user)
+			if err != nil {
+				app.errorJSON(w, err, http.StatusBadRequest)
+				return
+			}
+
+			http.SetCookie(w, &http.Cookie{
+				Name:     "__Host-refresh_token",
+				Path:     "/",
+				Value:    tokenPairs.RefreshToken,
+				Expires:  time.Now().Add(refreshTokenExpiry),
+				MaxAge:   int(refreshTokenExpiry.Seconds()),
+				SameSite: http.SameSiteStrictMode,
+				Domain:   "localhost",
+				HttpOnly: true,
+				Secure:   true,
+			})
+
+			// Send back JSON
+			_ = app.writeJSON(w, http.StatusOK, tokenPairs)
+			return
+
+		}
+	}
+
+	app.errorJSON(w, errors.New("unauthorized"), http.StatusUnauthorized)
 }
 
 // allUsers returns a list of all users as JSON
@@ -194,4 +269,21 @@ func (app *application) insertUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusNoContent)
+}
+
+func (app *application) deleteRefreshCookie(w http.ResponseWriter, r *http.Request) {
+	delCookie := http.Cookie{
+		Name:     "__Host-refresh_token",
+		Path:     "/",
+		Value:    "",
+		Expires:  time.Unix(0, 0),
+		MaxAge:   -1,
+		SameSite: http.SameSiteStrictMode,
+		Domain:   "localhost",
+		HttpOnly: true,
+		Secure:   true,
+	}
+
+	http.SetCookie(w, &delCookie)
+	w.WriteHeader(http.StatusAccepted)
 }
