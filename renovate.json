@@ -6,6 +6,9 @@
   "labels": [
     "dependencies"
   ],
+  "ignorePaths": [
+    "**/playing_with_go/**"
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": [
