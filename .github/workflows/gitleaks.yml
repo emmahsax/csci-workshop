@@ -11,6 +11,7 @@ jobs:
     uses: emmahsax/github-actions/.github/workflows/gitleaks.yml@main
     with:
       gitleaks_config_paths: "[
+        'playing_with_go/testing-in-go/webApp/README.md',
         'setup_test.go',
         'users_postgres_test.go',
       ]"
