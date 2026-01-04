@@ -1,6 +1,8 @@
-*.class
+# OS generated files
 .DS_Store
 ._*
+
+*.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
