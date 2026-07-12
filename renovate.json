@@ -1,14 +1,12 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
   ],
   "labels": [
     "dependencies"
   ],
-  "ignorePaths": [
-    "**/playing_with_go/**"
-  ],
+  "minimumReleaseAge": "7 days",
+  "internalChecksFilter": "strict",
   "packageRules": [
     {
       "matchUpdateTypes": [
