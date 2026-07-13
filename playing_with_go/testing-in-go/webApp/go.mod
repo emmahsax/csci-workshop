@@ -1,10 +1,10 @@
 module webApp
 
-go 1.21.0
+go 1.23
 
 require (
 	github.com/alexedwards/scs/v2 v2.7.0
-	github.com/go-chi/chi/v5 v5.0.11
+	github.com/go-chi/chi/v5 v5.3.1
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/jackc/pgconn v1.14.0
 	github.com/jackc/pgx/v4 v4.18.1
